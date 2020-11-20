@@ -1,0 +1,26 @@
+{
+  "name": "loading",
+  "version": "1.0.0",
+  "description": "Network command platform",
+  "author": "jian652485051@163.com",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
+    "element-ui": "^2.13.2",
+    "js-md5": "^0.7.3",
+    "nuxt": "^2.14.7",
+    "postcss-assets": "^5.0.0",
+    "postcss-nested": "^4.2.3",
+    "vue-responsive-component": "^1.0.5",
+    "vue-seamless-scroll": "^1.1.21"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
