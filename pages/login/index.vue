@@ -83,10 +83,10 @@ export default {
       this.$message.success(res.statusCode);
 
       setTimeout(() => {
-        window.location.href="/"
+        window.location.href="/";
       }, 1000);
     },
-  },
+  }
 };
 </script>
 

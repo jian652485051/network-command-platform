@@ -60,6 +60,7 @@ export default {
     '@nuxtjs/axios'
   ],
   axios: {
+    //baseURL:'',
     retry: {
       retries: 3
     },

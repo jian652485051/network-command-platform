@@ -106,12 +106,12 @@
 
 <script>
 import { mapState } from "vuex";
-import data1 from '@/static/datas/data1'
-import data2 from '@/static/datas/data2'
-import data3 from '@/static/datas/data3'
-import data4 from '@/static/datas/data4'
-import data5 from '@/static/datas/data5'
-import data6 from '@/static/datas/data6'
+import data1 from '@/static/datas/data1.js'
+import data2 from '@/static/datas/data2.js'
+import data3 from '@/static/datas/data3.js'
+import data4 from '@/static/datas/data4.js'
+import data5 from '@/static/datas/data5.js'
+import data6 from '@/static/datas/data6.js'
 
 export default {
   middleware: "auth",
@@ -128,26 +128,69 @@ export default {
       data6:[],
       data6_copy:[],
       rank_list_height:0,
+
+      fromDomain:""
     }
   },
   computed: {
     ...mapState(["user", "token"]),
     optionSingleHeightTime () {
       return {
-        singleHeight: 31,
+        singleHeight: 30,
         waitTime: 2500
       }
     }
   },
+  methods: {
+    getData1(){
+      this.$axios.$get(`/datas/data1.json`).then((res) => {
+        this.data1 = res.data;
+      });
+    },
+    getData2(){
+      this.$axios.$get(`/datas/data2.json`).then((res) => {
+        this.data2 = res.data;
+      });
+    },
+    getData3(){
+      this.$axios.$get(`/datas/data3.json`).then((res) => {
+        this.data3 = res.data;
+      });
+    },
+    getData4(){
+      this.$axios.$get(`/datas/data4.json`).then((res) => {
+        this.data4 = res.data;
+      });
+    },
+    getData5(){
+      this.$axios.$get(`/datas/data5.json`).then((res) => {
+        this.data5 = res.data;
+      });
+    },
+    getData6(){
+      this.$axios.$get(`/datas/data6.json`).then((res) => {
+        this.data6 = res.data;
+      });
+    }
+  },
   mounted() {
+    this.fromDomain = window.location.host;
+    this.rank_list_height = document.getElementById("rank_list").offsetHeight
+
     this.data1 = data1;
     this.data2 = data2;
     this.data3 = data3;
     this.data4 = data4;
     this.data5 = data5;
-
-    this.rank_list_height = document.getElementById("rank_list").offsetHeight
     this.data6 = data6;
+
+    // this.getData1();
+    // this.getData2();
+    // this.getData3();
+    // this.getData4();
+    // this.getData5();
+    // this.getData6();
+    
   },
 };
 </script>
